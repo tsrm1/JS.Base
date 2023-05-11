@@ -86,8 +86,12 @@ const newArray2 = myArray2.map(function (el) {
 
 console.log('myArray2 = ', myArray2)
 console.log('newArray = ', newArray)
+console.log('-------------------------------------------------------------')
 
-
-
+// REDUCE - перебирает все элементы массива, 
+// можно производить действия с элементами массива используя аккумулятор
+// можно посчитать сумму элементов числового масива
+const sum = myArray.reduce((el, acc) => acc += el, 0)
+console.log('myArray.reduce((el, acc) => acc += el, 0) = ', sum)
 
 console.log('-------------------------------------------------------------')
