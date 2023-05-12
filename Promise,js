@@ -1,0 +1,35 @@
+const getData = (url) =>
+    new Promise((resolve, reject) =>
+        fetch(url)
+            .then(response => response.json())
+            .then(json => resolve(json))
+            .catch(error => reject(error))
+    )
+
+// https://jsonplaceholder.typicode.com/posts  
+// 100 posts
+
+// https://jsonplaceholder.typicode.com/comments
+// 500 comments
+
+// https://jsonplaceholder.typicode.com/albums
+// 100 albums
+
+// https://jsonplaceholder.typicode.com/photos
+// 5000 photos
+
+
+// https://jsonplaceholder.typicode.com/users
+// 10 users
+
+
+// https://jsonplaceholder.typicode.com/todos
+// 200 todos
+getData('http://jsonplaceholder.typicode.com/todos')
+.then(data => console.log(data))
+.catch(error => console.log(error.message))
+
+// todo № 5
+getData('http://jsonplaceholder.typicode.com/todos/5')
+.then(data => console.log(data))
+.catch(error => console.log(error.message))
